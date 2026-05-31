@@ -1,36 +1,34 @@
 @echo off
 echo ============================================
-echo  نشر المشروع على GitHub Pages
+echo  نشر المشروع على Firebase Hosting
 echo ============================================
 echo.
 echo الخطوات المطلوبة:
 echo.
-echo 1. إنشاء مستودع على GitHub:
-echo    - اذهب إلى https://github.com/new
-echo    - اسم المستودع مثلاً: data-harmony-hub
-echo    - لا تضف README, .gitignore أو License
+echo 1. تثبيت Firebase CLI (إذا لم يكن مثبتاً):
+echo    npm install -g firebase-tools
 echo.
-echo 2. رفع المشروع إلى GitHub:
-echo    cd /d %~dp0
-echo    git init
-echo    git add .
-echo    git commit -m "النشر الأولي"
-echo    git branch -M main
-echo    git remote add origin https://github.com/mrm029671-tech/-.git
-echo    git push -u origin main
+echo 2. تسجيل الدخول إلى Firebase:
+echo    firebase login
 echo.
-echo 3. تفعيل GitHub Pages:
-echo    - اذهب إلى Settings ^> Pages في المستودع
-echo    - Source: GitHub Actions
+echo 3. إنشاء مشروع Firebase (مرة واحدة فقط):
+echo    - اذهب إلى https://console.firebase.google.com
+echo    - أنشئ مشروع جديد باسم: data-harmony-hub
+echo    - ربط المستودع: firebase init hosting
 echo.
-echo 4. بعد الرفع، GitHub Actions سيبني وينشر تلقائياً
-echo    - راجع التبويب Actions في المستودع
+echo 4. بناء المشروع:
+echo    npm run build
 echo.
-echo 5. سيتم النشر على:
-echo    https://mrm029671-tech.github.io/-/
+echo 5. النشر على Firebase:
+echo    firebase deploy --only hosting
+echo.
+echo 6. أو يمكنك ربط GitHub Actions للنشر التلقائي:
+echo    - في GitHub repository ^> Settings ^> Secrets
+echo    - أضف: FIREBASE_TOKEN
+echo    - احصل عليه من: firebase login:ci
 echo.
 echo ============================================
-echo ملاحظة: تأكد من تغيير mrm029671-tech إلى اسم
-echo المستخدم الخاص بك في GitHub
+echo رابط المشروع بعد النشر:
+echo https://data-harmony-hub.web.app
 echo ============================================
 pause
