@@ -1,0 +1,19 @@
+project_id = "aodzerqrhyjsrbnxqrmk"
+
+[functions.binance-proxy]
+verify_jwt = false
+
+[functions.fetch-crypto-prices]
+verify_jwt = false
+
+[functions.fetch-egx-stocks]
+verify_jwt = false
+
+[functions.sniper-scan]
+verify_jwt = false
+
+[functions.market-data-feeder]
+verify_jwt = false
+
+[functions.auto-migrate-schema]
+verify_jwt = false
